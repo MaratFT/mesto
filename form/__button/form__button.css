@@ -2,4 +2,13 @@
   width: 358px;
   height: 50px;
   margin: auto;
+  margin-bottom: 37px;
+}
+
+@media screen and (max-width: 767px) {
+  .form__button {
+    width: 238px;
+    height: 46px;
+    margin-bottom: 25px;
+  }
 }

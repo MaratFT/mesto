@@ -8,5 +8,13 @@
   position: absolute;
   top: 195px;
   left: calc((880px - 430px) / 2);
-  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    width: 282px;
+    height: 322px;
+    top: 123px;
+    left: calc((100% - 282px) / 2);
+  }
 }
