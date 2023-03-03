@@ -1,0 +1,9 @@
+.profile__plus-button {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  background-color: black;
+  background-image: url(../../../images/plus-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}

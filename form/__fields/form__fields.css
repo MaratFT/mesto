@@ -1,0 +1,8 @@
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  max-width: 358px;
+  margin: auto;
+  margin-bottom: 48px;
+  gap: 30px;
+}

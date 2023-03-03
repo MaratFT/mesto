@@ -1,0 +1,41 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__plus-button/profile__plus-button.css);
+@import url(../blocks/profile/__subtitle/profile__subtitle.css);
+@import url(../blocks/profile/__title/profile__title.css);
+@import url(../blocks/profile/_edit-buttonSize/profile__edit-buttonSize.css);
+
+@import url(../blocks/places/places.css);
+@import url(../blocks/place/place.css);
+@import url(../blocks/place/__title/place__title.css);
+@import url(../blocks/place/__image/place__image.css);
+@import url(../blocks/place/__like/place__like.css);
+@import url(../blocks/place/__title-like/place__title-like.css);
+@import url(../blocks/place/__like/_active/place__like_active.css);
+
+@import url(../form/form.css);
+@import url(../form/__title/form__title.css);
+@import url(../form/__field/form__field.css);
+@import url(../form/__button-save/form__button-save.css);
+@import url(../form/__button/form__button.css);
+@import url(../form/__fields/form__fields.css);
+@import url(../form/__field-border/form__field-border.css);
+@import url(../form/__close/form__close.css);
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__subtitle/footer__subtitle.css);
+
+* {
+  outline: 1px solid red;
+}

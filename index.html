@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Место</title>
+    <link rel="stylesheet" href="pages/index.css" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <img class="header__logo" src="images/logo.svg" />
+    </header>
+    <main>
+      <section class="profile">
+        <img class="profile__avatar" src="images/Jak-Iv-Kusto.jpg" />
+        <div class="profile__info">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <div class="profile__edit-button">
+            <button class="profile__edit-buttonSize"></button>
+          </div>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+        <div class="profile__add-button">
+          <button class="profile__plus-button"></button>
+        </div>
+      </section>
+      <section class="places">
+        <div class="place">
+          <img class="place__image" src="images/karachaevsk.jpg" />
+          <div class="place__title-like">
+            <h2 class="place__title">Карачаевск</h2>
+            <div class="place__like place__like_active"></div>
+          </div>
+        </div>
+        <div class="place">
+          <img class="place__image" src="images/gora-elbrus.jpg" />
+          <div class="place__title-like">
+            <h2 class="place__title">Гора Эльбрус</h2>
+            <div class="place__like place__like_active"></div>
+          </div>
+        </div>
+        <div class="place">
+          <img class="place__image" src="images/dombai.jpg" />
+          <div class="place__title-like">
+            <h2 class="place__title">Домбай</h2>
+            <div class="place__like place__like_active"></div>
+          </div>
+        </div>
+        <div class="place">
+          <img class="place__image" src="images/dombai.jpg" />
+          <div class="place__title-like">
+            <h2 class="place__title">Гора Эльбрус</h2>
+            <div class="place__like place__like_active"></div>
+          </div>
+        </div>
+        <div class="place">
+          <img class="place__image" src="images/gora-elbrus.jpg" />
+          <div class="place__title-like">
+            <h2 class="place__title">Домбай</h2>
+            <div class="place__like place__like_active"></div>
+          </div>
+        </div>
+        <div class="place">
+          <img class="place__image" src="images/karachaevsk.jpg" />
+          <div class="place__title-like">
+            <h2 class="place__title">Карачаево-Черкесия</h2>
+            <div class="place__like place__like_active"></div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <p class="footer__subtitle">&copy; 2023 Mesto Russia</p>
+      </footer>
+    </main>
+    <div class="form">
+      <h2 class="form__title">Редактировать профиль</h2>
+      <div class="form__fields">
+        <div class="form__field-border">
+          <form class="form__field">Жак-Ив Кусто</form>
+        </div>
+        <div class="form__field-border">
+          <form class="form__field">Исследователь океана</form>
+        </div>
+      </div>
+      <div class="form__button">
+        <button class="form__button-save">Сохранить</button>
+      </div>
+      <div class="form__close"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
