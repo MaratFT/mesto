@@ -5,3 +5,12 @@
   min-height: 74px;
   border-bottom: 1px solid #545454;
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 0;
+    padding-left: 27px;
+    padding-top: 28px;
+    min-height: 56px;
+  }
+}

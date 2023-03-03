@@ -8,4 +8,5 @@
   position: absolute;
   top: 195px;
   left: calc((880px - 430px) / 2);
+  display: none;
 }
