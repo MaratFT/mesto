@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Место</title>
     <link rel="stylesheet" href="pages/index.css" />
+    <script src="script.js" defer></script>
   </head>
   <body class="page">
     <header class="header">
@@ -15,9 +16,7 @@
         <img class="profile__avatar" src="images/Jak-Iv-Kusto.jpg" />
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <div class="profile__edit-button">
-            <button class="profile__edit-buttonSize"></button>
-          </div>
+          <button class="profile__edit-button"></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
         <div class="profile__add-button">
@@ -72,31 +71,32 @@
         <p class="footer__subtitle">&copy; 2023 Mesto Russia</p>
       </footer>
     </main>
-    <div class="form">
-      <h2 class="form__title">Редактировать профиль</h2>
-      <div class="form__fields">
-        <div class="form__field-border">
-          <input
-            type="text"
-            name="firstname"
-            placeholder="Жак-Ив Кусто"
-            class="form__field"
-          />
+    <div class="popup">
+      <div class="popup__container">
+        <h2 class="form__title">Редактировать профиль</h2>
+        <div class="form__fields">
+          <div class="form__field-border">
+            <input
+              type="text"
+              name="firstname"
+              placeholder="Имя"
+              class="form__field"
+            />
+          </div>
+          <div class="form__field-border">
+            <input
+              type="text"
+              name="aboutMe"
+              placeholder="О себе"
+              class="form__field"
+            />
+          </div>
         </div>
-        <div class="form__field-border">
-          <input
-            type="text"
-            name="firstname"
-            placeholder="Исследователь океана"
-            class="form__field"
-          />
+        <div class="form__button">
+          <button class="form__button-save">Сохранить</button>
         </div>
+        <div class="form__close"></div>
       </div>
-      <div class="form__button">
-        <button class="form__button-save">Сохранить</button>
-      </div>
-      <div class="form__close"></div>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
