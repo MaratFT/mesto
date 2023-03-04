@@ -16,16 +16,63 @@ let popup = page.querySelector(".popup");
 
 function clickEditButton() {
   popup.classList.add("popup_opened");
+  console.log("Открытие попапа");
 }
 
 profileEditButton.addEventListener("click", clickEditButton);
 
 function clickCloseButton() {
   popup.classList.remove("popup_opened");
+  console.log("Закрытие попапа");
+  let a = page.querySelector(".profile__title").innerHTML;
+  page.querySelector("#user-name-input").value = a;
+  let b = page.querySelector(".profile__subtitle").innerHTML;
+  page.querySelector("#about-me-input").value = b;
 }
 
 closeButton.addEventListener("click", clickCloseButton);
 
-let firstName = page.querySelector(".form__field");
+let buttonSave = page.querySelector(".form__button-save");
 
-let aboutMe = page.querySelector(".form__field");
+function saveForm() {
+  console.log("Кнопка сохранения работает");
+  let a = page.querySelector("#user-name-input").value;
+  console.log(a);
+  page.querySelector(".profile__title").innerHTML = a;
+  let b = page.querySelector("#about-me-input").value;
+  console.log(b);
+  page.querySelector(".profile__subtitle").innerHTML = b;
+  popup.classList.remove("popup_opened");
+  console.log("Сохранение и закрытие попапа");
+}
+
+buttonSave.addEventListener("click", saveForm);
+
+let a = page.querySelector(".profile__title").innerHTML;
+
+page.querySelector("#user-name-input").value = a;
+
+let b = page.querySelector(".profile__subtitle").innerHTML;
+
+page.querySelector("#about-me-input").value = b;
+
+let formElement = page.querySelector(".form__fields");
+let nameInput = formElement.querySelector("#user-name-input");
+let jobInput = formElement.querySelector("#about-me-input");
+
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+
+  page.querySelector("#user-name-input").value;
+  page.querySelector("#about-me-input").value;
+
+  page.querySelector(".profile__title").innerHTML;
+  page.querySelector(".profile__subtitle").innerHTML;
+
+  page.querySelector(".profile__title").innerHTML =
+    page.querySelector("#user-name-input").value;
+  page.querySelector(".profile__subtitle").innerHTML =
+    page.querySelector("#about-me-input").value;
+}
+
+formElement.addEventListener("submit", handleFormSubmit);

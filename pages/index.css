@@ -39,7 +39,3 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__subtitle/footer__subtitle.css);
-
-* {
-  outline: 1px solid red;
-}

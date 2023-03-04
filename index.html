@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Место</title>
     <link rel="stylesheet" href="pages/index.css" />
-    <script src="script.js" defer></script>
   </head>
   <body class="page">
     <header class="header">
@@ -74,13 +73,14 @@
     <div class="popup">
       <div class="popup__container">
         <h2 class="form__title">Редактировать профиль</h2>
-        <div class="form__fields">
+        <form class="form__fields">
           <div class="form__field-border">
             <input
               type="text"
               name="firstname"
               placeholder="Имя"
               class="form__field"
+              id="user-name-input"
             />
           </div>
           <div class="form__field-border">
@@ -89,14 +89,16 @@
               name="aboutMe"
               placeholder="О себе"
               class="form__field"
+              id="about-me-input"
             />
           </div>
-        </div>
+        </form>
         <div class="form__button">
           <button class="form__button-save">Сохранить</button>
         </div>
         <div class="form__close"></div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
