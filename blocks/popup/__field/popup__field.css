@@ -1,4 +1,4 @@
-.form__field {
+.popup__field {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -11,6 +11,6 @@
   display: block;
 }
 
-.form__field:focus {
+.popup__field:focus {
   outline: 5px solid rgba(0, 164, 228, 0.5);
 }

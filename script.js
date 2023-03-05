@@ -2,12 +2,10 @@ let page = document.querySelector(".page");
 
 let profileEditButton = page.querySelector(".profile__edit-button");
 
-let form = page.querySelector(".form");
-
-let closeButton = page.querySelector(".form__close");
+let closeButton = page.querySelector(".popup__close");
 
 function clickCloseButton() {
-  form.classList.add("form_disable");
+  popup.classList.add("popup_disable");
 }
 
 closeButton.addEventListener("click", clickCloseButton);
@@ -32,7 +30,7 @@ function clickCloseButton() {
 
 closeButton.addEventListener("click", clickCloseButton);
 
-let buttonSave = page.querySelector(".form__button-save");
+let buttonSave = page.querySelector(".popup__button-save");
 
 function saveForm() {
   console.log("Кнопка сохранения работает");
@@ -56,7 +54,7 @@ let b = page.querySelector(".profile__subtitle").innerHTML;
 
 page.querySelector("#about-me-input").value = b;
 
-let formElement = page.querySelector(".form__fields");
+let formElement = page.querySelector(".popup__fields");
 let nameInput = formElement.querySelector("#user-name-input");
 let jobInput = formElement.querySelector("#about-me-input");
 
