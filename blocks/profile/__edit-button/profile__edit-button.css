@@ -2,19 +2,11 @@
   background-image: url(../../../images/edit-button-full.svg);
   width: 24px;
   height: 24px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
   cursor: pointer;
   border: none;
-  font: inherit;
-  color: inherit;
   background-color: transparent;
   padding: 0;
-  background-repeat: no-repeat;
-  background-position: center;
+  align-self: center;
 }
 
 .profile__edit-button:hover {
