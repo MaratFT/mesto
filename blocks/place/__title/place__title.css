@@ -1,5 +1,5 @@
 .place__title {
-  margin: auto;
+  align-self: center;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

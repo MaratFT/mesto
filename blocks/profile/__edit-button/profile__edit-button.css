@@ -13,11 +13,16 @@
   opacity: 0.6;
 }
 
+@media screen and (max-width: 1023px) {
+  .profile__edit-button {
+    overflow: hidden;
+    background-size: contain;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    overflow: hidden;
-    background-size: contain;
   }
 }
