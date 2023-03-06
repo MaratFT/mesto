@@ -11,8 +11,8 @@
   .profile__info {
     column-gap: 10px;
     grid-template-columns: auto auto;
-    row-gap: 14px;
+    row-gap: 6px;
     padding-top: 26px;
-    padding-bottom: 36px;
+    padding-bottom: 32px;
   }
 }
