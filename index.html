@@ -15,17 +15,25 @@
         <img
           class="profile__avatar"
           src="images/Jak-Iv-Kusto.jpg"
-          alt="Жак-Ив Кусто"
+          alt="Фото пользователя"
         />
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button"></button>
+          <button
+            type="button"
+            aria-label="Редактировать"
+            class="profile__edit-button"
+          ></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__add-button"></button>
+        <button
+          type="submit"
+          aria-label="Добавить"
+          class="profile__add-button"
+        ></button>
       </section>
       <section class="places">
-        <div class="place">
+        <article class="place">
           <img
             class="place__image"
             src="images/karachaevsk.jpg"
@@ -33,10 +41,14 @@
           />
           <div class="place__title-like">
             <h2 class="place__title">Карачаевск</h2>
-            <div class="place__like place__like_active"></div>
+            <button
+              type="submit"
+              aria-label="Нравится"
+              class="place__like"
+            ></button>
           </div>
-        </div>
-        <div class="place">
+        </article>
+        <article class="place">
           <img
             class="place__image"
             src="images/gora-elbrus.jpg"
@@ -44,24 +56,36 @@
           />
           <div class="place__title-like">
             <h2 class="place__title">Гора Эльбрус</h2>
-            <div class="place__like place__like_active"></div>
+            <button
+              type="submit"
+              aria-label="Нравится"
+              class="place__like"
+            ></button>
           </div>
-        </div>
-        <div class="place">
+        </article>
+        <article class="place">
           <img class="place__image" src="images/dombai.jpg" alt="Домбай" />
           <div class="place__title-like">
             <h2 class="place__title">Домбай</h2>
-            <div class="place__like place__like_active"></div>
+            <button
+              type="submit"
+              aria-label="Нравится"
+              class="place__like"
+            ></button>
           </div>
-        </div>
-        <div class="place">
+        </article>
+        <article class="place">
           <img class="place__image" src="images/dombai.jpg" alt="Домбай" />
           <div class="place__title-like">
             <h2 class="place__title">Гора Эльбрус</h2>
-            <div class="place__like place__like_active"></div>
+            <button
+              type="submit"
+              aria-label="Нравится"
+              class="place__like"
+            ></button>
           </div>
-        </div>
-        <div class="place">
+        </article>
+        <article class="place">
           <img
             class="place__image"
             src="images/gora-elbrus.jpg"
@@ -69,10 +93,14 @@
           />
           <div class="place__title-like">
             <h2 class="place__title">Домбай</h2>
-            <div class="place__like place__like_active"></div>
+            <button
+              type="submit"
+              aria-label="Нравится"
+              class="place__like"
+            ></button>
           </div>
-        </div>
-        <div class="place">
+        </article>
+        <article class="place">
           <img
             class="place__image"
             src="images/karachaevsk.jpg"
@@ -80,9 +108,13 @@
           />
           <div class="place__title-like">
             <h2 class="place__title">Карачаево-Черкесия</h2>
-            <div class="place__like place__like_active"></div>
+            <button
+              type="submit"
+              aria-label="Нравится"
+              class="place__like"
+            ></button>
           </div>
-        </div>
+        </article>
       </section>
     </main>
     <footer class="footer">
@@ -91,28 +123,28 @@
     <div class="popup">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__fields">
-          <div class="popup__field-border">
-            <input
-              type="text"
-              name="firstname"
-              placeholder="Имя"
-              class="popup__field"
-              id="user-name-input"
-            />
-          </div>
-          <div class="popup__field-border">
-            <input
-              type="text"
-              name="aboutMe"
-              placeholder="О себе"
-              class="popup__field"
-              id="about-me-input"
-            />
-          </div>
+        <form name="Редактирование профиля" class="popup__fields">
+          <input
+            type="text"
+            name="firstname"
+            placeholder="Имя"
+            class="popup__field"
+            id="user-name-input"
+          />
+          <input
+            type="text"
+            name="aboutMe"
+            placeholder="О себе"
+            class="popup__field"
+            id="about-me-input"
+          />
         </form>
-        <button class="popup__button-save">Сохранить</button>
-        <div class="popup__close"></div>
+        <button type="button" class="popup__button-save">Сохранить</button>
+        <button
+          type="button"
+          aria-label="Закрыть"
+          class="popup__close"
+        ></button>
       </div>
     </div>
     <script src="scripts/script.js"></script>
