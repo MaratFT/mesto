@@ -4,7 +4,7 @@ const profileEditButton = page.querySelector(".profile__edit-button");
 
 const buttonClose = page.querySelector(".popup__close");
 
-const popup = page.querySelector(".popup");
+const profilePopup = page.querySelector(".profile-popup");
 
 const titleCopy = page.querySelector(".profile__title");
 
@@ -67,8 +67,16 @@ const initialCards = [
   },
 ];
 
-function clickEditButton() {
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+}
+
+function openPopup(popup) {
   popup.classList.add("popup_opened");
+}
+
+function clickEditButton() {
+  openPopup(profilePopup);
   nameInput.value = titleCopy.textContent;
   aboutMeInput.value = subtitleCopy.textContent;
 }
@@ -77,20 +85,23 @@ function saveFormSubmit(evt) {
   evt.preventDefault();
   titleCopy.textContent = nameInput.value;
   subtitleCopy.textContent = aboutMeInput.value;
-  clickCloseButton();
+  closePopup(profilePopup);
 }
-
+/*
 function clickCloseButton() {
-  popup.classList.remove("popup_opened");
+  profilePopup.classList.remove("popup_opened");
 }
-
+*/
+/*
 function clickAddButton() {
   popupAdd.classList.add("popup_opened");
 }
-
+*/
+/*
 function clickCloseButtonAdd() {
   popupAdd.classList.remove("popup_opened");
 }
+*/
 
 function addImage(url) {
   const placeTemplate = page
@@ -126,16 +137,21 @@ function creatImageSubmit(evt) {
   addImageTrue(newImage, place);
 
   fieldsImage.reset();
-  clickCloseButtonAdd();
+  closePopup(popupAdd);
 }
 
 profileEditButton.addEventListener("click", clickEditButton);
 
-profileAddButton.addEventListener("click", clickAddButton);
+profileAddButton.addEventListener("click", function () {
+  openPopup(popupAdd);
+});
 
-buttonClose.addEventListener("click", clickCloseButton);
+const closeButtons = document.querySelectorAll(".popup__close");
 
-profileCloseButton.addEventListener("click", clickCloseButtonAdd);
+closeButtons.forEach((button) => {
+  const popup = button.closest(".popup");
+  button.addEventListener("click", () => closePopup(popup));
+});
 
 formSave.addEventListener("submit", saveFormSubmit);
 
@@ -149,14 +165,20 @@ function closeImageView() {
   imageScale.classList.remove("popup_opened");
 }
 
-imageClose.addEventListener("click", closeImageView);
-
 place.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("place__like")) {
     evt.target.classList.toggle("place__like_active");
-  } else if (evt.target.classList.contains("place__remove")) {
+  }
+});
+
+place.addEventListener("click", function (evt) {
+  if (evt.target.classList.contains("place__remove")) {
     evt.target.closest(".place").remove();
-  } else if (evt.target.classList.contains("place__image")) {
+  }
+});
+
+place.addEventListener("click", function (evt) {
+  if (evt.target.classList.contains("place__image")) {
     const placeTitle = evt.target
       .closest(".place")
       .querySelector(".place__title").textContent;
@@ -164,6 +186,6 @@ place.addEventListener("click", function (evt) {
     imageView.setAttribute("src", evt.target.src);
     imageView.setAttribute("alt", placeName);
     imageTitle.textContent = placeTitle;
-    clickImageScale();
+    openPopup(imageScale);
   }
 });
