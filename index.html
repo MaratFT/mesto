@@ -32,120 +32,7 @@
           class="profile__add-button"
         ></button>
       </section>
-      <section class="places">
-        <article class="place">
-          <img
-            class="place__image"
-            src="images/karachaevsk.jpg"
-            alt="Карачаевск"
-          />
-          <button
-            type="button"
-            aria-label="Удалить"
-            class="place__remove"
-          ></button>
-          <div class="place__title-like">
-            <h2 class="place__title">Карачаевск</h2>
-            <button
-              type="button"
-              aria-label="Нравится"
-              class="place__like"
-            ></button>
-          </div>
-        </article>
-        <article class="place">
-          <img
-            class="place__image"
-            src="images/gora-elbrus.jpg"
-            alt="Гора Эльбрус"
-          />
-          <button
-            type="button"
-            aria-label="Удалить"
-            class="place__remove"
-          ></button>
-          <div class="place__title-like">
-            <h2 class="place__title">Гора Эльбрус</h2>
-            <button
-              type="button"
-              aria-label="Нравится"
-              class="place__like"
-            ></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="images/dombai.jpg" alt="Домбай" />
-          <button
-            type="button"
-            aria-label="Удалить"
-            class="place__remove"
-          ></button>
-          <div class="place__title-like">
-            <h2 class="place__title">Домбай</h2>
-            <button
-              type="button"
-              aria-label="Нравится"
-              class="place__like"
-            ></button>
-          </div>
-        </article>
-        <article class="place">
-          <img
-            class="place__image"
-            src="images/gora-elbrus.jpg"
-            alt="Гора Эльбрус"
-          />
-          <button
-            type="button"
-            aria-label="Удалить"
-            class="place__remove"
-          ></button>
-          <div class="place__title-like">
-            <h2 class="place__title">Гора Эльбрус</h2>
-            <button
-              type="button"
-              aria-label="Нравится"
-              class="place__like"
-            ></button>
-          </div>
-        </article>
-        <article class="place">
-          <img class="place__image" src="images/dombai.jpg" alt="Домбай" />
-          <button
-            type="button"
-            aria-label="Удалить"
-            class="place__remove"
-          ></button>
-          <div class="place__title-like">
-            <h2 class="place__title">Домбай</h2>
-            <button
-              type="button"
-              aria-label="Нравится"
-              class="place__like"
-            ></button>
-          </div>
-        </article>
-        <article class="place">
-          <img
-            class="place__image"
-            src="images/karachaevsk.jpg"
-            alt="Карачаево-Черкесия"
-          />
-          <button
-            type="button"
-            aria-label="Удалить"
-            class="place__remove"
-          ></button>
-          <div class="place__title-like">
-            <h2 class="place__title">Карачаево-Черкесия</h2>
-            <button
-              type="button"
-              aria-label="Нравится"
-              class="place__like"
-            ></button>
-          </div>
-        </article>
-      </section>
+      <section class="places"></section>
     </main>
     <footer class="footer">
       <p class="footer__subtitle">&copy; 2023 Mesto Russia</p>
@@ -177,6 +64,51 @@
         ></button>
       </div>
     </div>
+    <div class="popup popup_add">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form name="profileEditor" class="popup__fields popup__fieldsImage">
+          <input
+            type="text"
+            name="imageName"
+            placeholder="Название"
+            class="popup__field"
+            id="image-name-input"
+          />
+          <input
+            type="text"
+            name="imageInput"
+            placeholder="Ссылка на картинку"
+            class="popup__field"
+            id="image-input"
+          />
+          <button type="submit" class="popup__button-save">Создать</button>
+        </form>
+        <button
+          type="button"
+          aria-label="Закрыть"
+          class="popup__close popup__closeAdd"
+        ></button>
+      </div>
+    </div>
+    <template id="place-template">
+      <article class="place">
+        <img class="place__image" src="" alt="" />
+        <button
+          type="button"
+          aria-label="Удалить"
+          class="place__remove"
+        ></button>
+        <div class="place__title-like">
+          <h2 class="place__title"></h2>
+          <button
+            type="button"
+            aria-label="Нравится"
+            class="place__like"
+          ></button>
+        </div>
+      </article>
+    </template>
     <script src="scripts/script.js"></script>
   </body>
 </html>
