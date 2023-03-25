@@ -40,6 +40,8 @@ const imageTitle = page.querySelector(".popup__image-title");
 
 const imageClose = page.querySelector(".popup__close-image");
 
+const popup = document.querySelectorAll(".popup");
+
 const initialCards = [
   {
     name: "Архыз",
@@ -189,3 +191,30 @@ place.addEventListener("click", function (evt) {
     openPopup(imageScale);
   }
 });
+
+popup.forEach((popup) => {
+  popup.addEventListener("click", (event) => {
+    if (event.target === popup) {
+      popup.classList.remove("popup_opened");
+    }
+  });
+});
+
+function openPopup(popupElement) {
+  popupElement.classList.add("popup_opened");
+  document.addEventListener("keydown", handleEscapeKey);
+}
+
+function closePopup(popupElement) {
+  popupElement.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleEscapeKey);
+}
+
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
+    if (popupOpened) {
+      closePopup(popupOpened);
+    }
+  }
+}
