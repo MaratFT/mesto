@@ -71,10 +71,12 @@ const initialCards = [
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleEscapeKey);
 }
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", handleEscapeKey);
 }
 
 function clickEditButton() {
@@ -139,6 +141,10 @@ function creatImageSubmit(evt) {
   addImageTrue(newImage, place);
 
   fieldsImage.reset();
+
+  evt.submitter.classList.add("popup__button-save_disabled");
+  evt.submitter.disabled = true;
+
   closePopup(popupAdd);
 }
 
@@ -159,13 +165,8 @@ formSave.addEventListener("submit", saveFormSubmit);
 
 fieldsImage.addEventListener("submit", creatImageSubmit);
 
-function clickImageScale() {
-  imageScale.classList.add("popup_opened");
-}
-
-function closeImageView() {
-  imageScale.classList.remove("popup_opened");
-}
+openPopup(imageScale);
+closePopup(imageScale);
 
 place.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("place__like")) {
@@ -195,11 +196,12 @@ place.addEventListener("click", function (evt) {
 popup.forEach((popup) => {
   popup.addEventListener("click", (event) => {
     if (event.target === popup) {
-      popup.classList.remove("popup_opened");
+      closePopup(popup);
     }
   });
 });
 
+/*
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
   document.addEventListener("keydown", handleEscapeKey);
@@ -209,6 +211,7 @@ function closePopup(popupElement) {
   popupElement.classList.remove("popup_opened");
   document.removeEventListener("keydown", handleEscapeKey);
 }
+*/
 
 function handleEscapeKey(evt) {
   if (evt.key === "Escape") {
