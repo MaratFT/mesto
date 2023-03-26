@@ -165,9 +165,6 @@ formSave.addEventListener("submit", saveFormSubmit);
 
 fieldsImage.addEventListener("submit", creatImageSubmit);
 
-openPopup(imageScale);
-closePopup(imageScale);
-
 place.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("place__like")) {
     evt.target.classList.toggle("place__like_active");
