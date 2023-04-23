@@ -1,3 +1,6 @@
+import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
+
 const page = document.querySelector(".page");
 
 const profileEditButton = page.querySelector(".profile__edit-button");
@@ -91,21 +94,6 @@ function saveFormSubmit(evt) {
   subtitleCopy.textContent = aboutMeInput.value;
   closePopup(profilePopup);
 }
-/*
-function clickCloseButton() {
-  profilePopup.classList.remove("popup_opened");
-}
-*/
-/*
-function clickAddButton() {
-  popupAdd.classList.add("popup_opened");
-}
-*/
-/*
-function clickCloseButtonAdd() {
-  popupAdd.classList.remove("popup_opened");
-}
-*/
 
 function addImage(url) {
   const placeTemplate = page
@@ -124,10 +112,12 @@ function addImageTrue(url, place) {
   place.prepend(placeTemplate);
 }
 
-initialCards.forEach((url) => {
-  const placeElement = addImage(url);
-  place.append(placeElement);
-});
+// initialCards.forEach((url) => {
+//   const placeElement = addImage(url);
+//   place.append(placeElement);
+// });
+
+// Отправка данных карточки
 
 function creatImageSubmit(evt) {
   evt.preventDefault();
@@ -165,17 +155,21 @@ formSave.addEventListener("submit", saveFormSubmit);
 
 fieldsImage.addEventListener("submit", creatImageSubmit);
 
-place.addEventListener("click", function (evt) {
-  if (evt.target.classList.contains("place__like")) {
-    evt.target.classList.toggle("place__like_active");
-  }
-});
+// place.addEventListener("click", function (evt) {
+//   if (evt.target.classList.contains("place__like")) {
+//     evt.target.classList.toggle("place__like_active");
+//   }
+// });
+
+// Удаление карточки
 
 place.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("place__remove")) {
     evt.target.closest(".place").remove();
   }
 });
+
+// Попап изображения карточки
 
 place.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("place__image")) {
@@ -198,18 +192,6 @@ popup.forEach((popup) => {
   });
 });
 
-/*
-function openPopup(popupElement) {
-  popupElement.classList.add("popup_opened");
-  document.addEventListener("keydown", handleEscapeKey);
-}
-
-function closePopup(popupElement) {
-  popupElement.classList.remove("popup_opened");
-  document.removeEventListener("keydown", handleEscapeKey);
-}
-*/
-
 function handleEscapeKey(evt) {
   if (evt.key === "Escape") {
     const popupOpened = document.querySelector(".popup_opened");
@@ -218,3 +200,25 @@ function handleEscapeKey(evt) {
     }
   }
 }
+
+initialCards.forEach((info) => {
+  const card = new Card(info, "#place-template");
+  const cardElement = card.generateCard();
+
+  document.querySelector(".places").append(cardElement);
+});
+
+const enableValidation = {
+  formSelector: ".popup__fields",
+  inputSelector: ".popup__field",
+  submitButtonSelector: ".popup__button-save",
+  inactiveButtonClass: "popup__button-save_disabled",
+  inputErrorClass: "popup__field_type-error",
+  errorClass: "popup__error_visible",
+};
+
+const formElements = document.querySelectorAll(enableValidation.formSelector);
+formElements.forEach((formElement) => {
+  const formValidator = new FormValidator(enableValidation, formElement);
+  formValidator.enableValidation();
+});
