@@ -1,10 +1,9 @@
-import { imageScale, imageClose, imageView, imageTitle } from "./index.js";
-
 export class Card {
-  constructor(initialCards, placeTemplate) {
+  constructor(initialCards, placeTemplate, handleCardClick) {
     this._name = initialCards.name;
     this._link = initialCards.link;
     this._placeTemplate = placeTemplate;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -24,16 +23,16 @@ export class Card {
     this._element.remove();
   }
 
-  _handleOpenPopup() {
-    imageView.src = this._link;
-    imageScale.classList.add("popup_opened");
-    imageTitle.textContent = this._name;
-  }
+  // _handleOpenPopup() {
+  //   imageView.src = this._link;
+  //   imageScale.classList.add("popup_opened");
+  //   imageTitle.textContent = this._name;
+  // }
 
-  _handleClosePopup() {
-    imageView.src = "";
-    imageScale.classList.remove("popup_opened");
-  }
+  // _handleClosePopup() {
+  //   imageView.src = "";
+  //   imageScale.classList.remove("popup_opened");
+  // }
 
   _setEventListeners() {
     this.likeCardButton.addEventListener("click", () => {
@@ -44,14 +43,16 @@ export class Card {
       this._handleCardRemove();
     });
 
-    this.placeImage.addEventListener("click", () => {});
+    // this.placeImage.addEventListener("click", () => {
+    //   this._handleOpenPopup();
+    // });
+
+    // imageClose.addEventListener("click", () => {
+    //   this._handleClosePopup();
+    // });
 
     this.placeImage.addEventListener("click", () => {
-      this._handleOpenPopup();
-    });
-
-    imageClose.addEventListener("click", () => {
-      this._handleClosePopup();
+      this._handleCardClick(this._name, this._link);
     });
   }
 

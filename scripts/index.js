@@ -37,10 +37,10 @@ const fieldsImage = page.querySelector(".popup__fieldsImage");
 
 const popups = document.querySelectorAll(".popup");
 
-export const imageScale = document.querySelector(".popup_image-scale");
-export const imageClose = document.querySelector(".popup__close-image");
-export const imageView = document.querySelector(".popup__image-view");
-export const imageTitle = document.querySelector(".popup__image-title");
+const imageScale = document.querySelector(".popup_image-scale");
+const imageClose = document.querySelector(".popup__close-image");
+const imageView = document.querySelector(".popup__image-view");
+const imageTitle = document.querySelector(".popup__image-title");
 
 const enableValidation = {
   formSelector: ".popup__fields",
@@ -146,6 +146,7 @@ function creatImageSubmit(evt) {
   place.prepend(createCard(newImage));
 
   closePopup(popupAdd);
+  newCardFormValidator.resetValidation();
 }
 
 profileEditButton.addEventListener("click", clickEditButton);
@@ -233,7 +234,7 @@ initialCards.forEach((info) => {
 // });
 
 function createCard(item) {
-  const card = new Card(item, "#place-template");
+  const card = new Card(item, "#place-template", handleCardClick);
   const cardElement = card.generateCard();
   return cardElement;
 }
@@ -270,3 +271,9 @@ function createCard(item) {
 // newCardFormValidator.enableValidation();
 // console.log(profileFormValidator);
 // console.log(newCardFormValidator);
+
+function handleCardClick(name, link) {
+  imageView.src = link;
+  imageTitle.textContent = name;
+  openPopup(imageScale);
+}
