@@ -5,6 +5,7 @@ export class FormValidator {
     this._inputList = Array.from(
       this._formElement.querySelectorAll(this._validation.inputSelector)
     );
+
     this._submitButton = this._formElement.querySelector(
       this._validation.submitButtonSelector
     );
@@ -49,18 +50,12 @@ export class FormValidator {
     }
   }
 
-  _resetValidation(formElement, inputSelector, inputErrorClass, errorClass) {
-    const inputList = Array.from(formElement.querySelectorAll(inputSelector));
-
-    inputList.forEach((inputElement) => {
-      hideInputError(formElement, inputElement, inputErrorClass, errorClass);
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      _hideInputError(inputElement);
     });
 
-    toggleButtonState(
-      inputList,
-      formElement.querySelector(".popup__button-save"),
-      inactiveButtonClass
-    );
+    _toggleButtonState();
   }
 
   _setEventListeners() {

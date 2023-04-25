@@ -1,29 +1,4 @@
-// const initialCards = [
-//   {
-//     name: "Архыз",
-//     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-//   },
-//   {
-//     name: "Челябинская область",
-//     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-//   },
-//   {
-//     name: "Иваново",
-//     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-//   },
-//   {
-//     name: "Камчатка",
-//     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-//   },
-//   {
-//     name: "Холмогорский район",
-//     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-//   },
-//   {
-//     name: "Байкал",
-//     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-//   },
-// ];
+import { imageScale, imageClose, imageView, imageTitle } from "./index.js";
 
 export class Card {
   constructor(initialCards, placeTemplate) {
@@ -49,6 +24,17 @@ export class Card {
     this._element.remove();
   }
 
+  _handleOpenPopup() {
+    imageView.src = this._link;
+    imageScale.classList.add("popup_opened");
+    imageTitle.textContent = this._name;
+  }
+
+  _handleClosePopup() {
+    imageView.src = "";
+    imageScale.classList.remove("popup_opened");
+  }
+
   _setEventListeners() {
     this.likeCardButton.addEventListener("click", () => {
       this._handleCardLike();
@@ -59,6 +45,14 @@ export class Card {
     });
 
     this.placeImage.addEventListener("click", () => {});
+
+    this.placeImage.addEventListener("click", () => {
+      this._handleOpenPopup();
+    });
+
+    imageClose.addEventListener("click", () => {
+      this._handleClosePopup();
+    });
   }
 
   generateCard() {
