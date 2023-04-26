@@ -274,6 +274,7 @@ function createCard(item) {
 
 function handleCardClick(name, link) {
   imageView.src = link;
+  imageView.alt = name;
   imageTitle.textContent = name;
   openPopup(imageScale);
 }
