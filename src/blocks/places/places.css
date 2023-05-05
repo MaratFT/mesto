@@ -1,5 +1,6 @@
 .places {
   max-width: 880px;
+  min-height: 50vh;
   display: grid;
   grid-template-columns: 282px 282px 282px;
   row-gap: 20px;
