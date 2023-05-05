@@ -1,5 +1,3 @@
-import "../pages/index.css";
-
 export const page = document.querySelector(".page");
 
 export const profileEditButton = document.querySelector(
