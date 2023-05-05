@@ -1,4 +1,4 @@
-export class FormValidator {
+export default class FormValidator {
   constructor(validation, formElement) {
     this._validation = validation;
     this._formElement = formElement;

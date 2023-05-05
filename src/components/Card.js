@@ -1,7 +1,7 @@
-export class Card {
-  constructor(initialCards, placeTemplate, handleCardClick) {
-    this._name = initialCards.name;
-    this._link = initialCards.link;
+export default class Card {
+  constructor({ info, handleCardClick }, placeTemplate) {
+    this._name = info.name;
+    this._link = info.link;
     this._placeTemplate = placeTemplate;
     this._handleCardClick = handleCardClick;
   }
