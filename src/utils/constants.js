@@ -43,6 +43,12 @@ export const imageClose = document.querySelector(".popup__close-image");
 export const imageView = document.querySelector(".popup__image-view");
 export const imageTitle = document.querySelector(".popup__image-title");
 
+export const avatarProfile = document.querySelector(".profile__avatar-button");
+
+export const popupAvatar = document.querySelector(".popup__avatar");
+
+export const removeCard = document.querySelector(".popup__confirmation");
+
 export const enableValidation = {
   formSelector: ".popup__fields",
   inputSelector: ".popup__field",
