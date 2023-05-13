@@ -71,7 +71,7 @@ profileFormAvatarValidator.enableValidation();
 
 cardDeleteValidator.enableValidation();
 
-const popupConfirmation = new PopupWithConfirmation(".popup__confirmation");
+const popupConfirmation = new PopupWithConfirmation(".popup_confirmation");
 
 function createCard(item) {
   const card = new Card(
@@ -171,7 +171,7 @@ const popupCard = new PopupWithForm({
 popupCard.setEventListeners();
 
 const popupNewAvatar = new PopupWithForm({
-  popupSelector: ".popup__avatar",
+  popupSelector: ".popup_avatar",
   formSubmit: (item) => {
     popupNewAvatar.renderSave(true);
     api
