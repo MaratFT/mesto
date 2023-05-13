@@ -15,7 +15,6 @@ import {
   popupAdd,
   profileEditButton,
   profileAddButton,
-  fieldsImage,
   nameInput,
   aboutMeInput,
   avatarProfile,
@@ -73,14 +72,14 @@ cardDeleteValidator.enableValidation();
 
 const popupConfirmation = new PopupWithConfirmation(".popup_confirmation");
 
+const cardView = new PopupWithImage(".popup_image-scale");
+
 function createCard(item) {
   const card = new Card(
     {
       info: item,
       handleCardClick: (name, link) => {
-        const cardView = new PopupWithImage(".popup_image-scale");
         cardView.open(name, link);
-        cardView.setEventListeners();
       },
       handleDeleteCard: () => {
         popupConfirmation.open();
@@ -178,18 +177,17 @@ const popupNewAvatar = new PopupWithForm({
       .editAvatarUser(item)
       .then((res) => {
         userInfo.setUserInfo(res);
+        popupNewAvatar.close();
       })
       .catch((err) => console.log(err))
       .finally(() => {
         popupNewAvatar.renderSave(false);
-        popupNewAvatar.close();
       });
   },
 });
 
 profileAddButton.addEventListener("click", () => {
   popupCard.open();
-  fieldsImage.reset();
   newCardFormValidator.resetValidation();
 });
 
@@ -201,3 +199,5 @@ avatarProfile.addEventListener("click", () => {
 popupNewAvatar.setEventListeners();
 
 popupConfirmation.setEventListeners();
+
+cardView.setEventListeners();
